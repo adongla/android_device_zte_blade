@@ -20,6 +20,7 @@
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds. -->
 <resources>
+<<<<<<< HEAD
     <!-- Flag indicating whether we should enable the automatic brightness in Settings. -->
     <bool name="config_automatic_brightness_available">true</bool>
 
@@ -33,6 +34,22 @@
     <!-- If true, the screen can be rotated via the accelerometer in all 4
          rotations as the default behavior. -->
     <bool name="config_allowAllRotations">true</bool>
+=======
+
+    <!-- Flag indicating whether the surface flinger has limited
+	alpha compositing functionality in hardware. If set, the window
+	manager will disable alpha trasformation in animations where not
+	strictly needed. -->
+    <bool name="config_sf_limitedAlpha">true</bool>
+
+    <!-- Flag indicating whether we should enable the automatic brightness in Settings.
+         config_hardware_automatic_brightness_available is not set, so we will use software implementation -->
+    <bool name="config_automatic_brightness_available">true</bool>
+
+    <bool name="config_animateScreenLights">false</bool>
+
+    <bool name="config_disableMenuKeyInLockScreen">true</bool>
+>>>>>>> master
 
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
          The N entries of this array define N + 1 zones as follows:
@@ -86,7 +103,18 @@
         <item>0</item>
         <item>0</item>
     </integer-array>
+<<<<<<< HEAD
  
+=======
+    
+    <!-- Component name of the default wallpaper. This will be ImageWallpaper if not 
+         specified -->
+    <!--string name="default_wallpaper_component">com.android.wallpaper/.nexus.NexusWallpaper</string //-->
+
+    <integer name="config_deskDockKeepsScreenOn">0</integer>
+    <integer name="config_carDockKeepsScreenOn">1</integer>
+
+>>>>>>> master
     <!-- Default blink frequency for notification LED is 9 seconds. -->
     <integer name="config_defaultNotificationLedOff">9000</integer>
 
@@ -96,6 +124,10 @@
     <!-- Component name of the service providing geocoder API support. -->
     <string name="config_geocodeProvider">com.google.android.location.GeocodeProvider</string>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
     <!-- XXXXX NOTE THE FOLLOWING RESOURCES USE THE WRONG NAMING CONVENTION.
          Please don't copy them, copy anything else. -->
 
@@ -104,6 +136,7 @@
          based on the hardware -->
     <!-- An Array of "[Connection name],[ConnectivityManager connection type],
          [associated radio-type],[priority]  -->
+<<<<<<< HEAD
     <string-array translatable="false" name="networkAttributes">
         <item>"wifi,1,1,1,-1,true"</item>
 	<item>"mobile,0,0,0,-1,true"</item>
@@ -128,4 +161,49 @@
 
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
     <bool translatable="false" name="config_wifi_background_scan_support">false</bool>
+=======
+	<string-array translatable="false" name="networkAttributes">
+        <item>"wifi,1,1,1,-1,true"</item>
+		<item>"mobile,0,0,0,-1,true"</item>
+		<item>"mobile_mms,2,0,2,60000,true"</item>
+		<item>"mobile_supl,3,0,2,60000,true"</item>
+		<item>"mobile_dun,4,0,3,60000,true"</item>
+	</string-array>
+    <!-- List of regexpressions describing the interface (if any) that represent tetherable
+         USB interfaces.  If the device doesn't want to support tething over USB this should
+         be empty.  An example would be "usb.*" -->
+    <string-array translatable="false" name="config_tether_usb_regexs">
+        <item>"usb\\d"</item>
+    </string-array>
+
+    <!-- Regex array of allowable upstream ifaces for tethering - for example if you want
+         tethering on a new interface called "foo2" add <item>"foo\\d"</item> to the array -->
+    <add-resource type="string" name="config_tether_upstream_regexs">
+        <string-array translatable="false" name="config_tether_upstream_regexs">
+            <item>"rmnet\\d"</item>
+            <item>"wlan\\d"</item>
+        </string-array>
+    </add-resource>
+
+    <!-- List of regexpressions describing the interface (if any) that represent tetherable
+         Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
+         should be empty.  An example would be "softap.*" -->
+    <string-array translatable="false" name="config_tether_wifi_regexs">
+        <item>"athap0"</item>
+    </string-array>
+
+    <bool name="config_reverseDefaultRotation">true</bool>
+
+    <!-- Boolean indicating if we require the use of DUN on mobile for tethering -->
+    <add-resource type="bool" name="config_tether_dun_required">
+        <bool translatable="false" name="config_tether_dun_required">false</bool>
+    </add-resource>
+
+
+    <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
+    <integer-array name="config_keyboardTapVibePattern">
+        <item>30</item>
+    </integer-array>
+
+>>>>>>> master
 </resources>

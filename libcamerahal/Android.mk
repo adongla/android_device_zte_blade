@@ -5,7 +5,11 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE_TAGS    := optional
 LOCAL_MODULE_PATH    := $(TARGET_OUT_SHARED_LIBRARIES)/hw
+<<<<<<< HEAD
 LOCAL_MODULE         := camera.$(TARGET_BOARD_PLATFORM)
+=======
+LOCAL_MODULE         := camera.blade
+>>>>>>> master
 LOCAL_SRC_FILES      := cameraHal.cpp
 LOCAL_PRELINK_MODULE := false
 CAMERA_LIB           := camera
