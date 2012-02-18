@@ -22,8 +22,6 @@
          prevent the IccNetworkDepersonalizationPanel from being shown,
          and effectively disable the "Sim network lock" feature. -->
     <bool name="ignore_sim_network_locked_events">true</bool>
-<<<<<<< HEAD
-=======
 
     <!-- Flag indicating whether the Phone app should provide
          a "Dismiss" button on the SIM network unlock screen.
@@ -127,5 +125,4 @@
     <!-- Determines if device implements a noise suppression device for in call audio-->
     <bool name="has_in_call_noise_suppression">false</bool>
 
->>>>>>> master
 </resources>

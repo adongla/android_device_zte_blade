@@ -12,32 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-<<<<<<< HEAD
--include device/zte/common/BoardConfigCommon.mk
-
-# Board related defines
-TARGET_BOOTLOADER_BOARD_NAME := blade
-
-# Bluetooth
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
-
-# Kernel
-TARGET_PREBUILT_KERNEL := device/zte/blade/prebuilt/kernel
-BOARD_KERNEL_CMDLINE := androidboot.hardware=blade console=null
-BOARD_KERNEL_BASE := 0x02600000
-
-# Wifi
-BOARD_WPA_SUPPLICANT_DRIVER := AWEXT
-WIFI_DRIVER_MODULE_PATH := "/system/wifi/ar6000.ko"
-WIFI_DRIVER_MODULE_NAME := "ar6000"
-
-# Sensors
-BOARD_VENDOR_USE_AKMD := akm8973
-
-# GPS
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := blade
-=======
 # config.mk
 #
 # Product-specific compile-time definitions.
@@ -101,7 +75,6 @@ TARGET_PROVIDES_LIBAUDIO := true
 
 BOARD_UMS_LUNFILE := /sys/devices/platform/msm_hsusb/gadget/lun0/file
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
->>>>>>> master
 
 # # cat /proc/mtd
 # dev:    size   erasesize  name
@@ -114,13 +87,6 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun0/
 # mtd6: 0d020000 00020000 "userdata"
 # mtd7: 00180000 00020000 "persist"
 
-<<<<<<< HEAD
-BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x00480000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00480000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 0x0cf80000
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x0d020000
-BOARD_FLASH_BLOCK_SIZE := 131072
-=======
 
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x00480000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00900000
@@ -129,4 +95,3 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x0d020000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_RECOVERY_INITRC := device/zte/blade/recovery/recovery.rc
->>>>>>> master

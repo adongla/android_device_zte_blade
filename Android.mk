@@ -13,10 +13,5 @@
 # limitations under the License.
 
 ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),blade)
-<<<<<<< HEAD
--include device/zte/common/AndroidCommon.mk
-include $(call all-named-subdir-makefiles, libsensors libcamera libcamerahal)
-=======
 include $(call all-named-subdir-makefiles, libsensors liblights libomxcore libopencorehw libstagefrighthw libcamerahal)
->>>>>>> master
 endif

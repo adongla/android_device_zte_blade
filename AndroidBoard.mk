@@ -12,21 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-<<<<<<< HEAD
-LOCAL_PATH := device/zte/blade/prebuilt
-=======
 LOCAL_PATH := $(call my-dir)
->>>>>>> master
 
 #
 # Kernel
 #
 
-<<<<<<< HEAD
-=======
 TARGET_PREBUILT_KERNEL := device/zte/blade/prebuilt/kernel/kernel
 
->>>>>>> master
 ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
 $(INSTALLED_KERNEL_TARGET): $(TARGET_PREBUILT_KERNEL) | $(ACP)
 	$(transform-prebuilt-to-target)
