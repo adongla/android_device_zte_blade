@@ -25,9 +25,8 @@ LOCAL_PATH := $(call my-dir)
 
 -include $(LOCAL_PATH)/Android.mk
 
-$(call inherit-product-if-exists, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
-
 $(call inherit-product-if-exists, device/zte/blade/blade-vendor.mk)
+include $(call all-named-subdir-makefiles, libsensors liblights libomxcore libopencorehw libstagefrighthw libcamerahal)
 
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := zte_blade
@@ -38,11 +37,13 @@ PRODUCT_MANUFACTURER := ZTE
 PRODUCT_PACKAGES += \
     librs_jni \
     Gallery3d \
+    libmm-omxcore \
     SpareParts \
     Development \
     Term \
     hwcomposer.default \
     gps.blade \
+    camera.blade \
     lights.blade \
     sensors.blade \
     libstagefrighthw \
@@ -187,6 +188,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Don't set /proc/sys/vm/dirty_ratio to 0 when USB mounting
 PRODUCT_PROPERTY_OVERRIDES += ro.vold.umsdirtyratio=20
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=5m \
+    dalvik.vm.heapgrowthlimit=48m \
+    dalvik.vm.heapsize=128m
 
 # Misc properties
 # events_per_sec: default 90
