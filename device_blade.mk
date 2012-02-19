@@ -25,6 +25,8 @@ LOCAL_PATH := $(call my-dir)
 
 -include $(LOCAL_PATH)/Android.mk
 
+$(call inherit-product-if-exists, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
+
 $(call inherit-product-if-exists, device/zte/blade/blade-vendor.mk)
 
 # Discard inherited values and use our own instead.
@@ -180,12 +182,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.enabletr=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapsize=48m \
     dalvik.vm.dexopt-flags=v=n,o=v,m=y \
-    dalvik.vm.checkjni=false \
-    dalvik.vm.heapstartsize=5m \
-    dalvik.vm.heapgrowthlimit=48m \
-    dalvik.vm.heapsize=128m
+    dalvik.vm.checkjni=false
 
 # Don't set /proc/sys/vm/dirty_ratio to 0 when USB mounting
 PRODUCT_PROPERTY_OVERRIDES += ro.vold.umsdirtyratio=20
