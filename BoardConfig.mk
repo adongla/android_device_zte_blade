@@ -26,7 +26,7 @@ USE_CAMERA_STUB := false
 USE_OPENGL_RENDERER := true
 TARGET_USES_GENLOCK := true
 COMMON_GLOBAL_CFLAGS += -DMISSING_EGL_EXTERNAL_IMAGE -DMISSING_GRALLOC_BUFFERS -DMISSING_EGL_PIXEL_FORMAT_YV12
-COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE
+COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE -DFORCE_CPU_UPLOAD
 BOARD_HAS_FLIPPED_SCREEN := true
 TARGET_SPECIFIC_HEADER_PATH := device/zte/blade/include
 BOARD_EGL_CFG := device/zte/blade/prebuilt/system/lib/egl/egl.cfg
@@ -93,7 +93,6 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun0/
 TARGET_RECOVERY_INITRC := device/zte/blade/recovery/recovery.rc
 
 # Partition sizes
-
 # # cat /proc/mtd
 # dev:    size   erasesize  name
 # mtd0: 00480000 00020000 "recovery"

@@ -2,8 +2,15 @@ debug.sf.hw=1
 debug.composition.type=mdp
 debug.gr.numframebuffers=2
 
-# This should not be needed but on-screen keyboard uses the wrong density without it.
+debug.performance.tuning=1
+video.accelerate.hw=1
+debug.composition.type=hdpi
+hs.systemserver=16m
+hs.app.process=16m
+hs.su=8m
+hs.app_process=16m 
 
+# This should not be needed but on-screen keyboard uses the wrong density without it.
 qemu.sf.lcd_density=240
 
 keyguard.no_require_sim=true 
