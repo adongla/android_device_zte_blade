@@ -1,0 +1,61 @@
+debug.sf.hw=1
+debug.composition.type=mdp
+debug.gr.numframebuffers=2
+
+# This should not be needed but on-screen keyboard uses the wrong density without it.
+
+qemu.sf.lcd_density=240
+
+keyguard.no_require_sim=true 
+ro.com.android.dateformat=dd-MM-yyyy 
+ro.ril.hsxpa=1 
+ro.ril.gprsclass=10 
+ro.media.dec.jpeg.memcap=10000000
+
+rild.libpath=/system/lib/libril-qc-1.so 
+rild.libargs=-d /dev/smd0 
+wifi.interface=wlan0 
+wifi.supplicant_scan_interval=15 
+ro.com.android.dataroaming=false
+
+ro.sf.lcd_density=240 
+ro.sf.hwrotation=180 
+persist.sys.use_16bpp_alpha=1
+
+keyguard.no_require_sim=true 
+ro.com.android.dateformat=dd-MM-yyyy 
+ro.ril.hsxpa=2 
+ro.ril.gprsclass=10 
+ro.telephony.ril.v3=icccardstatus,datacall,signalstrength,facilitylock 
+ro.build.baseband_version=P729BB01 
+ro.telephony.default_network=0 
+ro.telephony.call_ring.multiple=false
+
+# HardwareRenderer properties
+# dirty_regions: "false" to disable partial invalidates, override if enabletr=true
+hwui.render_dirty_regions=false 
+hwui.disable_vsync=true 
+hwui.print_config=choice 
+debug.enabletr=false
+
+
+# Don't set /proc/sys/vm/dirty_ratio to 0 when USB mounting
+ro.vold.umsdirtyratio=20
+
+dalvik.vm.heapstartsize=5m 
+dalvik.vm.heapgrowthlimit=48m 
+dalvik.vm.heapsize=128m
+dalvik.vm.dexopt-flags=v=n,o=v,m=y 
+dalvik.vm.checkjni=false
+dalvik.vm.lockprof.threshold=500 
+dalvik.vm.execution-mode=int:jit 
+dalvik.vm.dexopt-data-only=1
+
+ro.com.google.locationfeatures=1 
+ro.setupwizard.enable_bypass=1 
+ro.media.dec.jpeg.memcap=20000000 
+ro.opengles.version=131072  
+ro.compcache.default=0 
+persist.sys.strictmode.disable=true 
+persist.sys.usb.config=mass_storage,adb 
+ro.build.fingerprint=google/yakju/maguro:4.0.1/ITL41D/223971:user/release-keys

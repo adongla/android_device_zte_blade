@@ -25,7 +25,6 @@ LOCAL_PATH := $(call my-dir)
 
 -include $(LOCAL_PATH)/Android.mk
 
-$(call inherit-product-if-exists, device/zte/blade/blade-vendor.mk)
 include $(call all-named-subdir-makefiles, libsensors liblights libomxcore libopencorehw libstagefrighthw libcamerahal)
 
 # Discard inherited values and use our own instead.
@@ -54,6 +53,13 @@ PRODUCT_PACKAGES += \
     abtfilt \
     prox_cal \
     dexpreopt
+
+
+# Blade uses high-density artwork where available
+PRODUCT_LOCALES += hdpi
+
+# we have enough storage space to hold precise GC data
+PRODUCT_TAGS += dalvik.gc.type-precise
 
 # proprietary side of the device
 $(call inherit-product-if-exists, vendor/zte/blade/blade-vendor.mk)
@@ -130,90 +136,3 @@ PRODUCT_COPY_FILES += \
 # Media profile
 PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/system/etc/media_profiles.xml:system/etc/media_profiles.xml
-
-PRODUCT_PROPERTY_OVERRIDES := \
-    keyguard.no_require_sim=true \
-    ro.com.android.dateformat=dd-MM-yyyy \
-    ro.ril.hsxpa=1 \
-    ro.ril.gprsclass=10 \
-    ro.media.dec.jpeg.memcap=10000000
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    rild.libpath=/system/lib/libril-qc-1.so \
-    rild.libargs=-d /dev/smd0 \
-    wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=15 \
-    ro.com.android.dataroaming=false
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=240 \
-    ro.sf.hwrotation=180 \
-    persist.sys.use_16bpp_alpha=1
-
-# Blade uses high-density artwork where available
-PRODUCT_LOCALES += hdpi
-
-# we have enough storage space to hold precise GC data
-PRODUCT_TAGS += dalvik.gc.type-precise
-
-PRODUCT_PROPERTY_OVERRIDES += debug.sf.hw=1
-PRODUCT_PROPERTY_OVERRIDES += debug.composition.type=mdp
-PRODUCT_PROPERTY_OVERRIDES += debug.gr.numframebuffers=2
-
-# This should not be needed but on-screen keyboard uses the wrong density without it.
-PRODUCT_PROPERTY_OVERRIDES += \
-    qemu.sf.lcd_density=240 
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    keyguard.no_require_sim=true \
-    ro.com.android.dateformat=dd-MM-yyyy \
-    ro.ril.hsxpa=2 \
-    ro.ril.gprsclass=10 \
-    ro.telephony.ril.v3=icccardstatus,datacall,signalstrength,facilitylock \
-    ro.build.baseband_version=P729BB01 \
-    ro.telephony.default_network=0 \
-    ro.telephony.call_ring.multiple=false
-
-# HardwareRenderer properties
-# dirty_regions: "false" to disable partial invalidates, override if enabletr=true
-PRODUCT_PROPERTY_OVERRIDES += \
-    hwui.render_dirty_regions=false \
-    hwui.disable_vsync=true \
-    hwui.print_config=choice \
-    debug.enabletr=false
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dexopt-flags=v=n,o=v,m=y \
-    dalvik.vm.checkjni=false
-
-# Don't set /proc/sys/vm/dirty_ratio to 0 when USB mounting
-PRODUCT_PROPERTY_OVERRIDES += ro.vold.umsdirtyratio=20
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=5m \
-    dalvik.vm.heapgrowthlimit=48m \
-    dalvik.vm.heapsize=128m
-
-# Misc properties
-# events_per_sec: default 90
-PRODUCT_PROPERTY_OVERRIDES += \
-    pm.sleep_mode=true \
-    ro.telephony.call_ring.delay=2 \
-    net.tcp.buffersize.default=4096,87380,256960,4096,16384,256960 \
-    net.tcp.buffersize.wifi=4096,87380,256960,4096,16384,256960 \
-    net.tcp.buffersize.umts=4096,87380,256960,4096,16384,256960 \
-    net.tcp.buffersize.gprs=4096,87380,256960,4096,16384,256960 \
-    net.tcp.buffersize.edge=4096,87380,256960,4096,16384,256960
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.google.locationfeatures=1 \
-    ro.setupwizard.enable_bypass=1 \
-    ro.media.dec.jpeg.memcap=20000000 \
-    dalvik.vm.lockprof.threshold=500 \
-    dalvik.vm.execution-mode=int:jit \
-    dalvik.vm.dexopt-data-only=1 \
-    ro.opengles.version=131072  \
-    ro.compcache.default=0 \
-    persist.sys.strictmode.disable=true \
-    persist.sys.usb.config=mass_storage,adb \
-    ro.build.fingerprint=google/yakju/maguro:4.0.1/ITL41D/223971:user/release-keys
