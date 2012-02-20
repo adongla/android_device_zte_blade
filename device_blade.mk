@@ -19,7 +19,7 @@
 # product configuration (apps).
 #
 
-DEVICE_PACKAGE_OVERLAYS := device/zte/blade/overlay
+DEVICE_PACKAGE_OVERLAYS := device/zte/common/overlay
 
 LOCAL_PATH := $(call my-dir)
 
