@@ -101,8 +101,6 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun0/
 
 # Recovery
 TARGET_RECOVERY_INITRC := device/zte/blade/recovery/recovery.rc
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/zte/blade/recovery/recovery_keys.c
-BOARD_CUSTOM_GRAPHICS := ../../../device/zte/blade/recovery/graphics.c
 
 # Partition sizes
 # # cat /proc/mtd
