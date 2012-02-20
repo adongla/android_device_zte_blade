@@ -23,8 +23,6 @@ DEVICE_PACKAGE_OVERLAYS := device/zte/blade/overlay
 
 LOCAL_PATH := $(call my-dir)
 
--include $(LOCAL_PATH)/Android.mk
-
 include $(call all-named-subdir-makefiles, libsensors liblights libomxcore libopencorehw libstagefrighthw libcamerahal)
 
 # Discard inherited values and use our own instead.
@@ -103,12 +101,13 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/system/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
     device/zte/blade/prebuilt/system/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
 
-# WLAN + BT
+# WLAN + BT = Sysctl
 PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/system/etc/init.bt.sh:system/etc/init.bt.sh \
     device/zte/blade/prebuilt/system/bin/hostapd:system/bin/hostapd \
     device/zte/blade/prebuilt/system/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
     device/zte/blade/prebuilt/system/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    device/zte/blade/prebuilt/system/etc/sysctl.conf:system/etc/sysctl.conf \
     device/zte/blade/prebuilt/system/etc/wifi/hostapd.conf:system/etc/wifi/hostapd.conf
 
 # Install the features available on this device.
