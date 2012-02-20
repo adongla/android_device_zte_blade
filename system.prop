@@ -27,7 +27,6 @@ ro.com.android.dataroaming=false
 
 ro.sf.lcd_density=240 
 ro.sf.hwrotation=180 
-persist.sys.use_16bpp_alpha=1
 
 keyguard.no_require_sim=true 
 ro.com.android.dateformat=dd-MM-yyyy 
@@ -44,7 +43,6 @@ hwui.render_dirty_regions=false
 hwui.disable_vsync=true 
 hwui.print_config=choice 
 debug.enabletr=false
-
 
 # Don't set /proc/sys/vm/dirty_ratio to 0 when USB mounting
 ro.vold.umsdirtyratio=20
@@ -64,5 +62,8 @@ ro.media.dec.jpeg.memcap=20000000
 ro.opengles.version=131072  
 ro.compcache.default=0 
 persist.sys.strictmode.disable=true 
-persist.sys.usb.config=mass_storage,adb 
-ro.build.fingerprint=google/yakju/maguro:4.0.1/ITL41D/223971:user/release-keys
+
+# USB
+sys.usb.config=mass_storage,adb
+persist.sys.usb.config=mass_storage,adb
+persist.service.adb.enable=1
