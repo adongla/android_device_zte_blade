@@ -83,7 +83,6 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/system/lib/hw/audio.primary.blade.so:system/lib/hw/audio.primary.blade.so \
-    device/zte/blade/prebuilt/system/lib/hw/audio_policy.blade.so:system/lib/hw/audio_policy.blade.so \
     device/zte/blade/prebuilt/system/lib/libcamera.so:system/lib/libcamera.so \
     device/zte/blade/prebuilt/system/lib/libcameraservice.so:system/lib/libcameraservice.so \
     device/zte/blade/prebuilt/system/lib/libcamera_client.so:system/lib/libcamera_client.so \
