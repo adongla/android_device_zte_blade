@@ -36,7 +36,7 @@ TARGET_USES_SF_BYPASS              := false
 TARGET_USES_C2D_COMPOSITION        := true
 TARGET_USES_GENLOCK                := true
 TARGET_QCOM_HDMI_OUT               := false
-TARGET_USE_HDMI_AS_PRIMARY         := true
+TARGET_USE_HDMI_AS_PRIMARY         := false
 TARGET_GRALLOC_USES_ASHMEM         := true
 
 
