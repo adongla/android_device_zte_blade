@@ -25,8 +25,8 @@ PRODUCT_PACKAGES += \
     gps.blade \
     camera.blade \
     lights.blade \
-    copybit.skate \
-    gralloc.arm \
+    audio.primary.blade \
+    audio_policy.blade \
     sensors.blade
 
 PRODUCT_COPY_FILES += \
@@ -56,11 +56,11 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/system/lib/libril.so:obj/lib/libril.so \
     device/zte/blade/prebuilt/system/lib/hw/gralloc.blade.so:system/lib/hw/gralloc.blade.so \
     device/zte/blade/prebuilt/system/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
-    device/zte/blade/prebuilt/system/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
-#    device/zte/blade/prebuilt/system/lib/hw/copybit.blade.so:system/lib/hw/copybit.blade.so \
+    device/zte/blade/prebuilt/system/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
+    device/zte/blade/prebuilt/system/lib/hw/copybit.blade.so:system/lib/hw/copybit.blade.so
 #    device/zte/blade/prebuilt/system/lib/hw/audio.primary.blade.so:system/lib/hw/audio.primary.blade.so \
 
-# WLAN + BT = Sysctl
+# WLAN + BT
 PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/system/etc/init.bt.sh:system/etc/init.bt.sh \
     device/zte/blade/prebuilt/system/bin/hostapd:system/bin/hostapd \
@@ -73,10 +73,10 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
     frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
 
-#Kernel Modules
+# Kernel Modules
 PRODUCT_COPY_FILES += device/zte/blade/prebuilt/system/wifi/ar6000.ko:system/wifi/ar6000.ko 
 
-#WiFi firmware
+# WiFi firmware
 PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/system/wifi/regcode:system/wifi/regcode \
     device/zte/blade/prebuilt/system/wifi/data.patch.hw2_0.bin:system/wifi/data.patch.hw2_0.bin \
