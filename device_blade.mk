@@ -12,68 +12,31 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#
-# This file is the build configuration for a full Android
-# build for sapphire hardware. This cleanly combines a set of
-# device-specific aspects (drivers) with a device-agnostic
-# product configuration (apps).
-#
-
-DEVICE_PACKAGE_OVERLAYS := device/zte/common/overlay
-
-LOCAL_PATH := $(call my-dir)
+# proprietary and common side of the device
+$(call inherit-product-if-exists, vendor/zte/blade/blade-vendor.mk)
+$(call inherit-product, device/zte/common/device_zte.mk)
 
 include $(call all-named-subdir-makefiles, libsensors liblights libomxcore libopencorehw libstagefrighthw libcamerahal)
 
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := zte_blade
 PRODUCT_DEVICE := blade
-PRODUCT_MODEL := Blade
-PRODUCT_MANUFACTURER := ZTE
+PRODUCT_MODEL := ZTE Blade
 
 PRODUCT_PACKAGES += \
-    librs_jni \
-    Gallery3d \
-    libmm-omxcore \
-    SpareParts \
-    Development \
-    Term \
-    hwcomposer.default \
     gps.blade \
     camera.blade \
     lights.blade \
-    sensors.blade \
-    libstagefrighthw \
-    libopencorehw \
-    libOmxCore \
-    libOmxVidEnc \
-    FM \
-    abtfilt \
-    prox_cal \
-    dexpreopt
-
-
-# Blade uses high-density artwork where available
-PRODUCT_LOCALES += hdpi
-
-# we have enough storage space to hold precise GC data
-PRODUCT_TAGS += dalvik.gc.type-precise
-
-# proprietary side of the device
-$(call inherit-product-if-exists, vendor/zte/blade/blade-vendor.mk)
-
-DISABLE_DEXPREOPT := false
+    sensors.blade
 
 PRODUCT_COPY_FILES += \
-    	device/zte/blade/prebuilt/system/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
-	device/zte/blade/prebuilt/system/usr/keylayout/blade_keypad.kl:system/usr/keylayout/blade_keypad.kl \
-	device/zte/blade/prebuilt/system/usr/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
-	device/zte/blade/prebuilt/system/etc/spn-conf.xml:system/etc/spn-conf.xml
+    device/zte/blade/prebuilt/system/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
+    device/zte/blade/prebuilt/system/usr/keylayout/blade_keypad.kl:system/usr/keylayout/blade_keypad.kl \
+    device/zte/blade/prebuilt/system/usr/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
 
 # fstab
 PRODUCT_COPY_FILES += \
-    device/zte/blade/prebuilt/system/etc/vold.fstab:system/etc/vold.fstab \
-    device/zte/common/prebuilt/etc/init.d/01sysctl:system/etc/init.d/01sysctl
+    device/zte/blade/prebuilt/system/etc/vold.fstab:system/etc/vold.fstab
 
 # Init
 PRODUCT_COPY_FILES += \
@@ -94,10 +57,6 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/system/lib/libril.so:obj/lib/libril.so \
     device/zte/blade/prebuilt/system/lib/hw/gralloc.blade.so:system/lib/hw/gralloc.blade.so \
     device/zte/blade/prebuilt/system/lib/hw/copybit.blade.so:system/lib/hw/copybit.blade.so \
-    device/zte/blade/prebuilt/system/lib/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
-    device/zte/blade/prebuilt/system/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
-    device/zte/blade/prebuilt/system/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
-    device/zte/blade/prebuilt/system/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
     device/zte/blade/prebuilt/system/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
     device/zte/blade/prebuilt/system/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
 
@@ -107,20 +66,12 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/system/bin/hostapd:system/bin/hostapd \
     device/zte/blade/prebuilt/system/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
     device/zte/blade/prebuilt/system/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    device/zte/blade/prebuilt/system/etc/sysctl.conf:system/etc/sysctl.conf \
     device/zte/blade/prebuilt/system/etc/wifi/hostapd.conf:system/etc/wifi/hostapd.conf
 
 # Install the features available on this device.
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
-    frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
-    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+    frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
 
 #Kernel Modules
 PRODUCT_COPY_FILES += device/zte/blade/prebuilt/system/wifi/ar6000.ko:system/wifi/ar6000.ko 
