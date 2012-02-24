@@ -16,8 +16,6 @@
 $(call inherit-product-if-exists, vendor/zte/blade/blade-vendor.mk)
 $(call inherit-product, device/zte/common/device_zte.mk)
 
-include $(call all-named-subdir-makefiles, libsensors liblights libomxcore libopencorehw libstagefrighthw libcamerahal)
-
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := zte_blade
 PRODUCT_DEVICE := blade
