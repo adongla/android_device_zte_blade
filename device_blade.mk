@@ -25,6 +25,8 @@ PRODUCT_PACKAGES += \
     gps.blade \
     camera.blade \
     lights.blade \
+    copybit.skate \
+    gralloc.arm \
     sensors.blade
 
 PRODUCT_COPY_FILES += \
@@ -44,7 +46,6 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_COPY_FILES += \
-    device/zte/blade/prebuilt/system/lib/hw/audio.primary.blade.so:system/lib/hw/audio.primary.blade.so \
     device/zte/blade/prebuilt/system/lib/libcamera.so:system/lib/libcamera.so \
     device/zte/blade/prebuilt/system/lib/libcameraservice.so:system/lib/libcameraservice.so \
     device/zte/blade/prebuilt/system/lib/libcamera_client.so:system/lib/libcamera_client.so \
@@ -54,9 +55,10 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/system/lib/libcamera_client.so:obj/lib/libcamera_client.so \
     device/zte/blade/prebuilt/system/lib/libril.so:obj/lib/libril.so \
     device/zte/blade/prebuilt/system/lib/hw/gralloc.blade.so:system/lib/hw/gralloc.blade.so \
-    device/zte/blade/prebuilt/system/lib/hw/copybit.blade.so:system/lib/hw/copybit.blade.so \
     device/zte/blade/prebuilt/system/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
     device/zte/blade/prebuilt/system/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
+#    device/zte/blade/prebuilt/system/lib/hw/copybit.blade.so:system/lib/hw/copybit.blade.so \
+#    device/zte/blade/prebuilt/system/lib/hw/audio.primary.blade.so:system/lib/hw/audio.primary.blade.so \
 
 # WLAN + BT = Sysctl
 PRODUCT_COPY_FILES += \

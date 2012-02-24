@@ -13,5 +13,7 @@
 # limitations under the License.
 
 ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),blade)
-include $(call all-named-subdir-makefiles, libsensors liblights libopencorehw libcamerahal)
+LOCAL_PATH := $(call my-dir)
+include $(CLEAR_VARS)
+include $(call all-makefiles-under,$(LOCAL_PATH))
 endif
