@@ -48,7 +48,7 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/lib/hw/gralloc.blade.so:system/lib/hw/gralloc.blade.so \
     device/zte/blade/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
     device/zte/blade/prebuilt/lib/hw/copybit.blade.so:system/lib/hw/copybit.blade.so \
-    device/zte/blade/prebuilt/system/lib/hw/audio.primary.blade.so:system/lib/hw/audio.primary.blade.so \
+    device/zte/blade/prebuilt/lib/hw/audio.primary.blade.so:system/lib/hw/audio.primary.blade.so \
 
 # BT
 PRODUCT_COPY_FILES += \
@@ -71,4 +71,4 @@ PRODUCT_COPY_FILES += \
 
 # Media profile
 PRODUCT_COPY_FILES += \
-    device/zte/blade/prebuilt/system/etc/media_profiles.xml:system/etc/media_profiles.xml
+    device/zte/blade/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
