@@ -41,7 +41,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/lib/libcamera.so:system/lib/libcamera.so \
     device/zte/blade/prebuilt/lib/libcameraservice.so:system/lib/libcameraservice.so \
-    device/zte/blade/prebuilt/system/lib/libcamera_client.so:system/lib/libcamera_client.so \
+    device/zte/blade/prebuilt/lib/libcamera_client.so:system/lib/libcamera_client.so \
     device/zte/blade/prebuilt/lib/libcamera.so:obj/lib/libcamera.so \
     device/zte/blade/prebuilt/lib/libcameraservice.so:obj/lib/libcameraservice.so \
     device/zte/blade/prebuilt/lib/libcamera_client.so:obj/lib/libcamera_client.so \
