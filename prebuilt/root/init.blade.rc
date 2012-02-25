@@ -20,10 +20,6 @@ on boot
     write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 90
     write /sys/devices/system/cpu/cpufreq/ondemand/down_threshold 30
 
-# Setup charging
-    chown system system /sys/module/msm_battery/parameters/usb_chg_enable
-
-
 # Setup bluetooth
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
