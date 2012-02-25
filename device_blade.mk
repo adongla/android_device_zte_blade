@@ -25,8 +25,6 @@ PRODUCT_PACKAGES += \
     gps.blade \
     camera.blade \
     lights.blade \
-    audio.primary.blade \
-    audio_policy.blade \
     sensors.blade
 
 PRODUCT_COPY_FILES += \
@@ -57,8 +55,8 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/lib/hw/gralloc.blade.so:system/lib/hw/gralloc.blade.so \
     device/zte/blade/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
     device/zte/blade/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
-    device/zte/blade/prebuilt/lib/hw/copybit.blade.so:system/lib/hw/copybit.blade.so
-#    device/zte/blade/prebuilt/system/lib/hw/audio.primary.blade.so:system/lib/hw/audio.primary.blade.so \
+    device/zte/blade/prebuilt/lib/hw/copybit.blade.so:system/lib/hw/copybit.blade.so \
+    device/zte/blade/prebuilt/system/lib/hw/audio.primary.blade.so:system/lib/hw/audio.primary.blade.so \
 
 # WLAN + BT
 PRODUCT_COPY_FILES += \
