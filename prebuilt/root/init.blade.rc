@@ -5,6 +5,8 @@ on early-init
     mkdir /mnt/sdcard 0000 system system
     # for backwards compatibility
     symlink /mnt/sdcard /sdcard
+    chmod 7777 /data/dalvik-cache
+    chown system system /data/dalvik-cache
 
 service dhcp-service /system/bin/netcfg wlan0 dhcp
         oneshot
