@@ -26,7 +26,7 @@ WIFI_DRIVER_MODULE_NAME     := ar6000
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := blade
 
 # Kernel
-TARGET_PREBUILT_KERNEL := device/zte/blade/prebuilt/kernel
+TARGET_PREBUILT_KERNEL := device/zte/blade/prebuilt/
 BOARD_KERNEL_BASE := 0x02600000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=blade console=null
 
