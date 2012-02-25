@@ -18,6 +18,6 @@ PRODUCT_RELEASE_NAME := Blade
 -include vendor/cm/config/common_versions.mk
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := Blade
+PRODUCT_DEVICE := blade
 
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=blade BUILD_ID=GRJ22 BUILD_FINGERPRINT=google/passion/passion:2.3.4/GRJ22/121341:user/release-keys PRIVATE_BUILD_DESC="passion-user 2.3.4 GRJ22 121341 release-keys"
