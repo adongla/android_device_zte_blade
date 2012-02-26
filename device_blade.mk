@@ -52,7 +52,9 @@ PRODUCT_COPY_FILES += \
 
 # BT
 PRODUCT_COPY_FILES += \
-    device/zte/blade/prebuilt/etc/init.bt.sh:system/etc/init.bt.sh
+    device/zte/blade/prebuilt/system/etc/init.bt.sh:system/etc/init.bt.sh \
+    device/zte/blade/prebuilt/system/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    device/zte/blade/prebuilt/system/etc/wifi/hostapd.conf:system/etc/wifi/hostapd.conf
 
 # Install the features available on this device.
 PRODUCT_COPY_FILES += \
