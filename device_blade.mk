@@ -53,9 +53,9 @@ PRODUCT_COPY_FILES += \
 
 # WLAN + BT
 PRODUCT_COPY_FILES += \
-    device/zte/blade/prebuilt/system/etc/init.bt.sh:system/etc/init.bt.sh \
-    device/zte/blade/prebuilt/system/etc/wifi/hostapd.conf:system/etc/wifi/hostapd.conf \
-    device/zte/blade/prebuilt/system/bin/hostapd:system/bin/hostapd
+    device/zte/blade/prebuilt/etc/init.bt.sh:system/etc/init.bt.sh \
+    device/zte/blade/prebuilt/etc/wifi/hostapd.conf:system/etc/wifi/hostapd.conf \
+    device/zte/blade/prebuilt/bin/hostapd:system/bin/hostapd
 
 # Install the features available on this device.
 PRODUCT_COPY_FILES += \
