@@ -47,14 +47,15 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/lib/libcamera_client.so:obj/lib/libcamera_client.so \
     device/zte/blade/prebuilt/lib/hw/gralloc.blade.so:system/lib/hw/gralloc.blade.so \
     device/zte/blade/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
+    device/zte/blade/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
     device/zte/blade/prebuilt/lib/hw/copybit.blade.so:system/lib/hw/copybit.blade.so \
     device/zte/blade/prebuilt/lib/hw/audio.primary.blade.so:system/lib/hw/audio.primary.blade.so \
 
-# BT
+# WLAN + BT
 PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/system/etc/init.bt.sh:system/etc/init.bt.sh \
-    device/zte/blade/prebuilt/system/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    device/zte/blade/prebuilt/system/etc/wifi/hostapd.conf:system/etc/wifi/hostapd.conf
+    device/zte/blade/prebuilt/system/etc/wifi/hostapd.conf:system/etc/wifi/hostapd.conf \
+    device/zte/blade/prebuilt/system/bin/hostapd:system/bin/hostapd
 
 # Install the features available on this device.
 PRODUCT_COPY_FILES += \
