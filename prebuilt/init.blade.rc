@@ -7,8 +7,6 @@ on early-init
     symlink /mnt/sdcard /sdcard
     chmod 7777 /data/dalvik-cache
     chown system system /data/dalvik-cache
-# MIUI only
-    mkdir /data/system/theme 7777 system system
 
 service dhcp-service /system/bin/netcfg wlan0 dhcp
     oneshot
@@ -31,7 +29,6 @@ on boot
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
 
-
 # Setup android gadget
    write /sys/module/g_android/parameters/serial_number CM9-Blade
 
@@ -44,6 +41,8 @@ on boot
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
     mkdir /data/system 0775 system system
+# MIUI only
+    mkdir /data/system/theme 7777 system system
 
 # Create  WIFI filesystem structure
     mkdir /data/misc 01771 system misc
