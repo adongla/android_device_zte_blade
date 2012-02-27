@@ -20,4 +20,5 @@ PRODUCT_RELEASE_NAME := Blade
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := blade
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=blade BUILD_ID=GRJ22 BUILD_FINGERPRINT=google/passion/passion:2.3.4/GRJ22/121341:user/release-keys PRIVATE_BUILD_DESC="passion-user 2.3.4 GRJ22 121341 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=blade BUILD_ID=IML74K BUILD_DISPLAY_ID=IML74K BUILD_FINGERPRINT="google/yakju/maguro:4.0.2/ICL53F/235179:user/release-keys" 
+PRIVATE_BUILD_DESC="yakju-user 4.0.2 ICL53F 235179 release-keys"
