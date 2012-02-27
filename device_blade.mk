@@ -70,6 +70,7 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/wifi/regcode:system/wifi/regcode \
     device/zte/blade/prebuilt/wifi/data.patch.hw2_0.bin:system/wifi/data.patch.hw2_0.bin \
     device/zte/blade/prebuilt/wifi/athwlan.bin.z77:system/wifi/athwlan.bin.z77 \
+    device/zte/blade/prebuilt/wifi/calData_ar6102_15dBm.bin:system/wifi/calData_ar6102_15dBm.bin \
     device/zte/blade/prebuilt/wifi/athtcmd_ram.bin:system/wifi/athtcmd_ram.bin
 
 # Media profile
