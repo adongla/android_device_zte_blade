@@ -22,3 +22,8 @@ PRODUCT_DEVICE := blade
 
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=blade BUILD_ID=IML74K BUILD_DISPLAY_ID=IML74K BUILD_FINGERPRINT="google/yakju/maguro:4.0.2/ICL53F/235179:user/release-keys" 
 PRIVATE_BUILD_DESC="yakju-user 4.0.2 ICL53F 235179 release-keys"
+
+# Goo Manager supprt
+ro.goo.developerid=tilal6991
+ro.goo.rom=cm9blade
+ro.goo.version=$(shell date +%Y%m%d)
