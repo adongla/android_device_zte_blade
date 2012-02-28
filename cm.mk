@@ -13,7 +13,7 @@ $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 $(call inherit-product, device/zte/blade/device_blade.mk)
 
 PRODUCT_NAME := cm_blade
-PRODUCT_RELEASE_NAME := Blade
+PRODUCT_RELEASE_NAME := blade
 
 -include vendor/cm/config/common_versions.mk
 
@@ -25,6 +25,7 @@ PRIVATE_BUILD_DESC="yakju-user 4.0.2 ICL53F 235179 release-keys"
 
 # Goo Manager supprt
 PRODUCT_PROPERTY_OVERRIDES += \
+   ro.goo.board=skate \
    ro.goo.developerid=tilal6991 \
    ro.goo.rom=cm9blade \
    ro.goo.version=$(shell date +%Y%m%d)

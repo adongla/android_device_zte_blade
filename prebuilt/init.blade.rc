@@ -42,7 +42,7 @@ on boot
     chown dhcp dhcp /data/misc/dhcp
     mkdir /data/system 0775 system system
 # MIUI only
-    mkdir /data/system/theme 7777 system system
+    mkdir /data/system/theme 7777 radio radio
 
 # Create  WIFI filesystem structure
     mkdir /data/misc 01771 system misc
