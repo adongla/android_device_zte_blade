@@ -1,7 +1,4 @@
-#
-# system.prop for Blade
-#
-# Graphics and performance
+# Graphics
 ro.sf.lcd_density=240
 ro.sf.hwrotation=180
 qemu.sf.lcd_density=240
