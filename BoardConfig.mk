@@ -14,13 +14,11 @@
 
 -include device/zte/common/BoardConfigCommon.mk
 
+# Kernel
+BOARD_KERNEL_CMDLINE := androidboot.hardware=blade console=null
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := blade
-
-# Wifi related defines
-BOARD_WPA_SUPPLICANT_DRIVER := AWEXT
-WIFI_DRIVER_MODULE_PATH     := /system/wifi/ar6000.ko
-WIFI_DRIVER_MODULE_NAME     := ar6000
 
 # QCOM and GPS
 BOARD_USES_QCOM_GPS := true
@@ -29,14 +27,10 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
 BOARD_GPS_LIBRARIES := libloc_api
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := blade
 
-# Kernel
-BOARD_KERNEL_BASE := 0x02600000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=blade console=null
-
-# Recovery
-TARGET_RECOVERY_INITRC := device/zte/blade/recovery/recovery.rc
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/zte/blade/recovery/recovery_keys.c
-BOARD_CUSTOM_GRAPHICS := ../../../device/zte/blade/recovery/graphics.c
+# Wifi related defines
+BOARD_WPA_SUPPLICANT_DRIVER := AWEXT
+WIFI_DRIVER_MODULE_PATH := /system/wifi/ar6000.ko
+WIFI_DRIVER_MODULE_NAME := ar6000
 
 # Partition sizes
 # # cat /proc/mtd
@@ -49,7 +43,6 @@ BOARD_CUSTOM_GRAPHICS := ../../../device/zte/blade/recovery/graphics.c
 # mtd5: 0cf80000 00020000 "system"
 # mtd6: 0d020000 00020000 "userdata"
 # mtd7: 00180000 00020000 "persist"
-
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x00480000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00900000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 0x0cf80000

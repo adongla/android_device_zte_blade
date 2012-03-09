@@ -26,6 +26,8 @@ PRODUCT_PACKAGES += \
     camera.blade \
     lights.blade \
     sensors.blade \
+    copybit.blade \
+    gralloc.blade \
     audio.primary.blade \
     audio_policy.blade
 
@@ -39,12 +41,8 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/init.blade.usb.rc:root/init.blade.usb.rc \
     device/zte/blade/prebuilt/ueventd.blade.rc:root/ueventd.blade.rc
 
-# Audio
-PRODUCT_COPY_FILES += \
-    device/zte/blade/prebuilt/lib/hw/gralloc.blade.so:system/lib/hw/gralloc.blade.so \
-    device/zte/blade/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
-    device/zte/blade/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
-    device/zte/blade/prebuilt/lib/hw/copybit.blade.so:system/lib/hw/copybit.blade.so
+#    device/zte/blade/prebuilt/lib/hw/gralloc.blade.so:system/lib/hw/gralloc.blade.so \
+#    device/zte/blade/prebuilt/lib/hw/copybit.blade.so:system/lib/hw/copybit.blade.so
 
 # WLAN + BT
 PRODUCT_COPY_FILES += \
@@ -69,7 +67,3 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/wifi/device.bin:system/wifi/device.bin \
     device/zte/blade/prebuilt/wifi/eeprom.bin:system/wifi/eeprom.bin \
     device/zte/blade/prebuilt/wifi/eeprom.data:system/wifi/eeprom.data
-
-# Media profile
-PRODUCT_COPY_FILES += \
-    device/zte/blade/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
