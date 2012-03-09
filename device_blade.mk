@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# proprietary and common side of the device
+# Proprietary and common side of the device
 $(call inherit-product-if-exists, vendor/zte/blade/blade-vendor.mk)
 $(call inherit-product, device/zte/common/device_zte.mk)
 
@@ -21,15 +21,20 @@ PRODUCT_NAME := zte_blade
 PRODUCT_DEVICE := blade
 PRODUCT_MODEL := ZTE Blade
 
+# Libs
 PRODUCT_PACKAGES += \
     gps.blade \
     camera.blade \
     lights.blade \
     sensors.blade \
     copybit.blade \
-    gralloc.blade \
     audio.primary.blade \
     audio_policy.blade
+
+# Install the features available on this device.
+PRODUCT_COPY_FILES += \
+    frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
+    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml
 
 PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
@@ -41,8 +46,9 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/init.blade.usb.rc:root/init.blade.usb.rc \
     device/zte/blade/prebuilt/ueventd.blade.rc:root/ueventd.blade.rc
 
-#    device/zte/blade/prebuilt/lib/hw/gralloc.blade.so:system/lib/hw/gralloc.blade.so \
-#    device/zte/blade/prebuilt/lib/hw/copybit.blade.so:system/lib/hw/copybit.blade.so
+# Gralloc (from Tom G - I can't get ones that I compiled to work)
+PRODUCT_COPY_FILES += \
+    device/zte/blade/prebuilt/lib/hw/gralloc.blade.so:system/lib/hw/gralloc.blade.so
 
 # WLAN + BT
 PRODUCT_COPY_FILES += \
@@ -50,16 +56,8 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/etc/wifi/hostapd.conf:system/etc/wifi/hostapd.conf \
     device/zte/blade/prebuilt/bin/hostapd:system/bin/hostapd
 
-# Install the features available on this device.
-PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
-    frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
-
-# Kernel Modules
-PRODUCT_COPY_FILES += device/zte/blade/prebuilt/wifi/ar6000.ko:system/wifi/ar6000.ko 
-
-# WiFi firmware
-PRODUCT_COPY_FILES += \
+# WiFi
+PRODUCT_COPY_FILES += device/zte/blade/prebuilt/wifi/ar6000.ko:system/wifi/ar6000.ko \
     device/zte/blade/prebuilt/wifi/regcode:system/wifi/regcode \
     device/zte/blade/prebuilt/wifi/data.patch.hw2_0.bin:system/wifi/data.patch.hw2_0.bin \
     device/zte/blade/prebuilt/wifi/athwlan.bin.z77:system/wifi/athwlan.bin.z77 \
