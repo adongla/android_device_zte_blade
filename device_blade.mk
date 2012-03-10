@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Proprietary and common side of the device
-$(call inherit-product-if-exists, vendor/zte/blade/blade-vendor.mk)
+$(call inherit-product, vendor/zte/blade/blade-vendor.mk)
 $(call inherit-product, device/zte/common/device_zte.mk)
 
 # Discard inherited values and use our own instead.
@@ -28,6 +28,7 @@ PRODUCT_PACKAGES += \
     lights.blade \
     sensors.blade \
     copybit.blade \
+    hwcomposer.blade \
     audio.primary.blade \
     audio_policy.blade
 
@@ -46,7 +47,7 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/init.blade.usb.rc:root/init.blade.usb.rc \
     device/zte/blade/prebuilt/ueventd.blade.rc:root/ueventd.blade.rc
 
-# Gralloc (from Tom G - I can't get ones that I compiled to work)
+# Gralloc (from paul-xxx - I can't get ones that I compiled to work)
 PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/lib/hw/gralloc.blade.so:system/lib/hw/gralloc.blade.so
 
