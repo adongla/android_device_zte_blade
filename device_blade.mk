@@ -28,7 +28,6 @@ PRODUCT_PACKAGES += \
     lights.blade \
     sensors.blade \
     copybit.blade \
-    hwcomposer.blade \
     audio.primary.blade \
     audio_policy.blade
 
