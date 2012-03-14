@@ -47,8 +47,8 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/ueventd.blade.rc:root/ueventd.blade.rc
 
 # Gralloc (from paul-xxx - I can't get ones that I compiled to work)
-PRODUCT_COPY_FILES += \
-    device/zte/blade/prebuilt/lib/hw/gralloc.blade.so:system/lib/hw/gralloc.blade.so
+#PRODUCT_COPY_FILES += \
+#    device/zte/blade/prebuilt/lib/hw/gralloc.blade.so:system/lib/hw/gralloc.blade.so
 
 # WLAN + BT
 PRODUCT_COPY_FILES += \
