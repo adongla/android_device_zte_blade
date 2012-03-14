@@ -28,6 +28,7 @@ PRODUCT_PACKAGES += \
     lights.blade \
     sensors.blade \
     copybit.blade \
+    gralloc.blade \
     audio.primary.blade \
     audio_policy.blade
 
