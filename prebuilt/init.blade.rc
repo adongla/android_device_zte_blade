@@ -57,13 +57,6 @@ on boot
 # Permission for ril
    chown radio system /dev/pm_monitor
    chmod 0770 /dev/pm_monitor
-   chown radio system /dev/oncrpc/30000016:9c95bb4d
-   chown radio system /dev/oncrpc/30000000:dd7fe79a
-   chown radio system /dev/oncrpc/30000019:821a1945
-   chown radio system /dev/oncrpc/3000003c:beb78360
-   chown radio system /dev/oncrpc/30000003:d03123cc
-   chown radio system /dev/oncrpc/3000000e:00060000
-   chown radio system /dev/oncrpc/30000012:00010000
    mkdir /data/local
    chmod 0777 /data/local
    chown radio shell /data/local
@@ -132,7 +125,7 @@ on property:init.svc.wpa_supplicant=stopped
     class main
     stop dhcpcd
 
-service wpa_supplicant /system/bin/wpa_supplicant -Dawext -iwlan0 -W -c/data/misc/wifi/wpa_supplicant.conf
+service wpa_supplicant /system/bin/wpa_supplicant -Dar6000 -iwlan0 -W -c/data/misc/wifi/wpa_supplicant.conf
     class main
     group wifi inet
     socket wpa_wlan0 dgram 660 wifi wifi
@@ -140,6 +133,11 @@ service wpa_supplicant /system/bin/wpa_supplicant -Dawext -iwlan0 -W -c/data/mis
     oneshot
 
 service dhcpcd_wlan0 /system/bin/dhcpcd -BKL
+    class main
+    disabled
+    oneshot
+
+service start_usb0 /system/bin/logwrapper /system/bin/sh /etc/start_usb0.sh
     class main
     disabled
     oneshot

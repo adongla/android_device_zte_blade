@@ -24,10 +24,7 @@ PRODUCT_MODEL := ZTE Blade
 # Libs
 PRODUCT_PACKAGES += \
     gps.blade \
-    camera.blade \
-    lights.blade \
     sensors.blade \
-    copybit.blade \
     audio.primary.blade \
     audio_policy.blade
 
@@ -45,10 +42,6 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/init.blade.rc:root/init.blade.rc \
     device/zte/blade/prebuilt/init.blade.usb.rc:root/init.blade.usb.rc \
     device/zte/blade/prebuilt/ueventd.blade.rc:root/ueventd.blade.rc
-
-# Gralloc (from paul-xxx - I can't get ones that I compiled to work)
-PRODUCT_COPY_FILES += \
-    device/zte/blade/prebuilt/lib/hw/gralloc.blade.so:system/lib/hw/gralloc.blade.so
 
 # WLAN + BT
 PRODUCT_COPY_FILES += \
