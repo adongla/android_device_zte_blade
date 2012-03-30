@@ -9,6 +9,11 @@ on property:sys.usb.config=mass_storage,adb
     start adbd
     setprop sys.usb.state $sys.usb.config
 
+on property:sys.usb.config=rndis,adb
+    write /sys/module/g_android/parameters/product_id 1364
+    start adbd
+    setprop sys.usb.state $sys.usb.config
+
 on property:sys.usb.config=mass_storage,rndis,adb
     write /sys/module/g_android/parameters/product_id 1364
     start adbd
