@@ -23,10 +23,9 @@ PRODUCT_MODEL := Blade
 
 # Libs
 PRODUCT_PACKAGES += \
+    librpc \
     gps.blade \
-    sensors.blade \
-    audio.primary.blade \
-    audio_policy.blade
+    sensors.blade
 
 # Install the features available on this device.
 PRODUCT_COPY_FILES += \
