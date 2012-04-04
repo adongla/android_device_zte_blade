@@ -17,9 +17,6 @@
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=blade console=null
 
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := blade
-
 # QCOM and GPS
 BOARD_GPS_LIBRARIES := libloc
 BOARD_USES_GPSSHIM := true
