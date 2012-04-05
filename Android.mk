@@ -12,6 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),blade)
+ifeq ($(PRODUCT_RELEASE_NAME),blade)
 include $(call all-makefiles-under,device/zte/blade)
 endif
