@@ -12,10 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
--include device/zte/common/BoardConfigCommon.mk
+include device/zte/common/BoardConfigCommon.mk
 
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=blade console=null
+TARGET_BOOTLOADER_BOARD_NAME := blade
 
 # QCOM and GPS
 BOARD_GPS_LIBRARIES := libloc
