@@ -20,7 +20,6 @@ $(call inherit-product, device/zte/common/device_zte.mk)
 PRODUCT_NAME := zte_blade
 PRODUCT_DEVICE := blade
 PRODUCT_MODEL := Blade
-PRODUCT_BRAND := ZTE
 
 # Libs
 PRODUCT_PACKAGES += \
