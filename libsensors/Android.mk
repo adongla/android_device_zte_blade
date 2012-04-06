@@ -13,7 +13,7 @@
 # limitations under the License.
 
 
-ifeq ($(PRODUCT_RELEASE_NAME),blade)
+ifeq ($(PRODUCT_DEVICE),blade)
 LOCAL_PATH := $(call my-dir)
 
 ifneq ($(TARGET_SIMULATOR),true)
