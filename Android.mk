@@ -13,6 +13,8 @@
 # limitations under the License.
 
 ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),blade)
+ifdef $(AOKP)
 include $(call all-makefiles-under,device/zte/common)
+endif
 include $(call all-makefiles-under,device/zte/blade)
 endif
