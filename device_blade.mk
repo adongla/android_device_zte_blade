@@ -16,10 +16,19 @@
 $(call inherit-product, vendor/zte/blade/blade-vendor.mk)
 $(call inherit-product, device/zte/common/device_zte.mk)
 
-# Discard inherited values and use our own instead.
-PRODUCT_NAME := zte_blade
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Set those variables here to overwrite the inherited values.
+PRODUCT_NAME := blade
 PRODUCT_DEVICE := blade
-PRODUCT_MODEL := Blade
+PRODUCT_BRAND := ZTE
+PRODUCT_MODEL := ZTE Blade
+
+$(call inherit-product, device/common/gps/gps_eu_supl.mk)
+
+PRODUCT_AAPT_PREF_CONFIG := hdpi
+PRODUCT_AAPT_CONFIG := normal hdpi
 
 # Libs
 PRODUCT_PACKAGES += \
